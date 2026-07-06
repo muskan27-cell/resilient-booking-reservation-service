@@ -1,0 +1,10 @@
+.DS_Store
+.idea/
+.vscode/
+target/
+*.log
+*.class
+backend/.mvn/wrapper/maven-wrapper.jar
+frontend/node_modules/
+frontend/dist/
+*.iml

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resilient Booking Console</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Expedia-style backend showcase</p>
+          <h1>Resilient Booking Console</h1>
+        </div>
+        <button id="refreshBtn" type="button">Refresh</button>
+      </section>
+
+      <section class="dashboard">
+        <form id="bookingForm" class="panel">
+          <h2>Create Booking</h2>
+          <label>
+            Inventory
+            <select id="inventorySelect" required></select>
+          </label>
+          <label>
+            Customer Email
+            <input id="emailInput" type="email" value="traveler@example.com" required />
+          </label>
+          <label>
+            Quantity
+            <input id="quantityInput" type="number" min="1" value="1" required />
+          </label>
+          <label>
+            Idempotency Key
+            <div class="inline">
+              <input id="idempotencyInput" type="text" required />
+              <button id="newKeyBtn" type="button">New</button>
+            </div>
+          </label>
+          <label class="check">
+            <input id="forceFailureInput" type="checkbox" />
+            Force payment failure to demo compensation
+          </label>
+          <div class="actions">
+            <button type="submit">Book</button>
+            <button id="retryBtn" type="button">Retry Same Request</button>
+          </div>
+          <pre id="responseBox" class="response">{}</pre>
+        </form>
+
+        <section class="panel">
+          <h2>Inventory</h2>
+          <div id="inventoryList" class="list"></div>
+        </section>
+
+        <section class="panel wide">
+          <h2>Recent Bookings</h2>
+          <div id="bookingsList" class="table"></div>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
