@@ -79,7 +79,7 @@ docs/      Architecture, scaling, and tradeoff write-ups
 ops/       Prometheus config
 ```
 
-## Why This Is Portfolio-Relevant
+
 
 Travel booking systems are not CRUD-only. They coordinate scarce inventory, payment side effects, retries from mobile/web clients, vendor outages, and reconciliation. This project focuses on those failure modes and documents the system design decisions behind them.
 
